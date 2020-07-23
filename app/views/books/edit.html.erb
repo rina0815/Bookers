@@ -1,16 +1,20 @@
 <h1>Editing Book</h1>
 <%= form_for(@book) do |f| %>
+  <!-- ここからエラーメッセージ -->
   <% if @book.errors.any? %>
-    <ul>
-      <% @book.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+    <div class="error_explanaition">
+      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
-  <div>
-    <div class="field">
-      <%= f.label :title %><br>
-      <%= f.text_field :title %><br>
+  <!-- ここまでエラーメッセージ -->
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
   </div>
   <div class="field">
     <%= f.label :title %><br>

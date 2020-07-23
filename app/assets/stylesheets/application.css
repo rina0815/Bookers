@@ -68,3 +68,6 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 /*index*/
+.error_explanaition {
+  color: red;
+}
